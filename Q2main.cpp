@@ -7,6 +7,7 @@ int main(){
     l.Add(2,-1,0); // Adding elements to l linked list
     l.Add(5,-2,3);
     l.Add(7,-1,6);
+    l.Add(9,7,3);
     l.Add(6, 3,1); //Will no be added since 3 is not in the linked list
     cout<<"linked list after adding nodes: "<<endl;
     l.Print(); // Printing the linked list l
