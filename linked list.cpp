@@ -90,8 +90,12 @@ void linkedlist::Print(){
     n=h;
     while(n->next!=NULL){
         n=n->next;
-        cout<<n->value<<" "<<n->occorunce<<endl;
+        if(n->next!=NULL)
+            cout<<n->value<<" ("<<n->occorunce<<")"<<" -> ";
+        else
+            cout<<n->value<<" ("<<n->occorunce<<")";
     }
+    cout<<endl;
 }
 linkedlist linkedlist::vectorb(vector<int> v){
     int t;
