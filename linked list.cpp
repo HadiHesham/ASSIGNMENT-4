@@ -10,8 +10,6 @@ linkedlist::linkedlist(){
 void linkedlist::Add(int added,int place,int o){
     node *n;
     n=new node;
-    if(h==NULL && place!=-1 && place!=-2)
-        return;
     if(place==-1){
         n->value=added;n->occorunce=o;
         n->next=h->next;
