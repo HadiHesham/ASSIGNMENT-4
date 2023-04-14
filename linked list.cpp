@@ -46,40 +46,37 @@ void linkedlist::Delete(int place){
     node *p;
     p=new node;
     p=h;
-    if(h->next!=NULL){
-        if(place==-1){
-            h=h->next;
-            delete p;
-            return;
-        }
-        if(place==-2){
-            n=h->next;
-            while(n->next!=NULL){
-                p=p->next;
-                n=n->next;
-            }
-            p->next=NULL;
-            delete n;
-            return;
-        }
+    if(place==-1){
+        h=h->next;
+        delete p;
+        return;
+    }
+    if(place==-2){
         n=h->next;
-        while(n->value!=place && n->next!=NULL){
+        while(n->next!=NULL){
             p=p->next;
             n=n->next;
         }
-        if(n->value==place && n->next!=NULL){
-            p->next=n->next;
-            delete n;
-        }
+        p->next=NULL;
+        delete n;
+        return;
     }
-    else
-        if(place==h->value || place==-1 || place==-2){
-            h->value=NULL;
-            h->occorunce=NULL;
-            h->next=NULL;
-            delete p;
-            return;
-        }
+    n=h->next;
+    while(n->value!=place && n->next!=NULL){
+        p=p->next;
+        n=n->next;
+    }
+    if(n->value==place && n->next!=NULL){
+        p->next=n->next;
+        delete n;
+    }
+    if(place==h->value){
+        h->value=NULL;
+        h->occorunce=NULL;
+        h->next=NULL;
+        delete p;
+        return;
+    }
             
 }
 void linkedlist::Print(){
